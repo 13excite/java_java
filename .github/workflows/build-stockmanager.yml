@@ -1,0 +1,28 @@
+name: Maven build stockmanager
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - stockmanager/**
+  pull_request:
+    branches:
+      - master
+    paths:
+      - stockmanager/**
+
+jobs:
+  build_and_test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 8
+
+    - name: Build project with Maven
+      run: mvn -B package --file stockmanager/pom.xml
