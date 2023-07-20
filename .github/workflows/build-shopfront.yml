@@ -27,6 +27,9 @@ jobs:
     - name: Build project with Maven
       run: mvn -B package --file shopfront/pom.xml
 
+    - name: Docker version
+      run: docker version
+
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
