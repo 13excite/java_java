@@ -35,7 +35,7 @@ jobs:
     - name: Test
       run: echo $DOCKER_BUILDKIT
     - name: TEST DOCKER
-      run:  docker buildx build -t frontend:0.1.1-dev.1 --build-arg ENV=dev .
+      run: cd shopfront/ &&  docker buildx build -t frontend:0.1.1-dev.1 --build-arg ENV=dev .
     - name: listiii
       run: docker image list
 
