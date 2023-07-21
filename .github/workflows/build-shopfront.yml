@@ -35,7 +35,7 @@ jobs:
          version | grep version)\"  >> $GITHUB_OUTPUT
     - name: "Example output call between steps"
       run: |
-        echo "Output [${{steps.mmm.outputs.packages}}]"
+        echo 'Output [${{steps.mmm.outputs.packages}}]'
 
     - name: Build project with Maven
       run: mvn -B package --file shopfront/pom.xml
