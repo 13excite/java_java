@@ -1,5 +1,8 @@
 # syntax=docker/dockerfile:1.4
 
+
+
+
 FROM openjdk:8-jre
 ADD --link target/shopfront-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8010
