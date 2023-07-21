@@ -26,8 +26,8 @@ jobs:
     - name: mmmm
       id: "mmm"
       run: |
-        echo \"packages=\"$(docker \
-         version | grep version) >> $GITHUB_OUTPUT
+        echo packages=\"$(docker \
+         version | grep version)\" >> $GITHUB_OUTPUT
     - name: "Example output call between steps"
       run: |
         echo "Output [${{steps.mmm.outputs}}]"
