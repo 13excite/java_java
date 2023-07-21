@@ -23,7 +23,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 8
-        - id: step
     - name: mmmm
       id: "mmm"
       run: >-
