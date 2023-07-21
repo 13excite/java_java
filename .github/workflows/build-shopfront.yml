@@ -25,7 +25,7 @@ jobs:
         java-version: 8
     - name: mmmm
       id: "mmm"
-      run: >-
+      run: |
         "echo \"packages=\"$(docker \
          version | grep \
          build)" >> $GITHUB_OUTPUT"
