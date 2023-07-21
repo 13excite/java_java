@@ -26,6 +26,8 @@ jobs:
     - name: Set color
       id: random-color-generator
       run: echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
+    - name: Get color
+      run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
     - name: mmmm
       id: "mmm"
       run: |
@@ -33,7 +35,7 @@ jobs:
          version | grep version)\"
     - name: "Example output call between steps"
       run: |
-        echo "Output [${{steps.mmm.outputs}}]"
+        echo "Output [${{steps.mmm.outputs.packages}}]"
 
     - name: Build project with Maven
       run: mvn -B package --file shopfront/pom.xml
