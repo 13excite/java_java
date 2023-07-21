@@ -23,6 +23,16 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 8
+        - id: step
+    - name: mmmm
+      id: "mmm"
+      run: >-
+        "echo \"packages=\"$(docker
+         version |
+         grep build >> $GITHUB_OUTPUT"
+    - name: m123
+      run: >-
+        echo "Output [${{steps.mmm.outputs.packages}}]"
 
     - name: Build project with Maven
       run: mvn -B package --file shopfront/pom.xml
